@@ -4,22 +4,19 @@ public class EJClase {
 
     public static void main(String[] args) {
 
-        Lista list = new Lista();
+        Lista lista = new Lista();
+        lista.agregarNodoAlFinal(10);
 
-        initializeList(list, 10);
-
-        deletePairs(list);
-
-        System.out.println(list.toString());
-
-
+        System.out.println(10);
+        lista.agregarNodoAlFinal(9);
+        System.out.println(10);
     }
 
     public static void deletePairs(Lista list){
 
         Nodo current = list.getInicio();
         while(current != null && current.siguiente != null ){
-            current.siguiente = current.siguiente.siguiente;
+            current.setinicio(current.getsiguiente().getsiguiente());
             current = current.siguiente;
         }
 

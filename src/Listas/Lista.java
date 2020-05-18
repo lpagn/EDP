@@ -1,6 +1,7 @@
 package Listas;
 
 public class Lista {
+
     Nodo inicio;
 
     public Lista(){
@@ -44,6 +45,31 @@ public class Lista {
             System.out.println(inicial.getdato());
             inicial=inicial.getsiguiente();
         }
+    }
+
+    public boolean esVacia() {
+        if (this.inicio == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void agregarNodoAlFinal(int dato){
+        Nodo nuevo,aux;
+        nuevo=new Nodo();
+        nuevo.setdato(dato);
+        aux=new Nodo();
+        if(esVacia()){
+            this.inicio=nuevo;
+        } else{
+            aux=inicio;
+            while(aux.getsiguiente()!=null){
+                aux=aux.getsiguiente();
+            }
+            aux.setinicio(nuevo);
+        }
+        //tamaño ++;
     }
 
 
