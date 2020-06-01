@@ -63,31 +63,38 @@ public class Arbol {
 			return 1 + Math.max(altura(current.getDerecho()),altura(current.getIzquierdo()));
 		}
 		
-		public static int alturaIterativo(Nodo root) {
-			if(root==null) {
-				return 0;
-			}
-			Queue<Nodo> queue = new LinkedList<>();
-			queue.add(root);
-			int h = 0;
-			while(!queue.isEmpty()) {
-				int nodeCount = queue.size();
-				if(nodeCount==0) {
-					return h;
-				}
-				h++;
-				while(nodeCount>0) {
-					Nodo n = queue.poll();
-					if(n.getIzquierdo()!=null) {
-						queue.add(n);
-					}
-					if(n.getDerecho()!=null) {
-						queue.add(n);
-					}
-					nodeCount--;
-				}
-			}
-			return h;
+		public static int alturaIterativo(Nodo node) {
+			// Caso base, la altura de un arbol vacio es 0 
+	        if (node == null) 
+	            return 0; 
+	   
+	        // Crear una cola vacia 
+	        Queue<Nodo> q = new LinkedList(); 
+	   
+	        // Encolar el nodo raiz, el cual ya sabemos que no es nulo 
+	        q.add(node); 
+	        int height = 0; 
+	   
+	        while (1 == 1)  
+	        { 
+	        	// Veamos cuantos nodos hay en este nivel
+	            int nodeCount = q.size(); 
+	            if (nodeCount == 0) 
+	                return height; // si no hay nodos en el siguiente nivel, es porque se termino el arbol
+	            height++; // si el arbol no se termino, incrementar la altura
+	   
+	            // Desencolar todos los nodos de este nivel, y encolar todos los nodos del siguiente nivel
+	            while (nodeCount > 0)  
+	            { 
+	                Nodo newnode = q.peek(); 
+	                q.remove(); 
+	                if (newnode.getIzquierdo() != null) 
+	                    q.add(newnode.getIzquierdo()); 
+	                if (newnode.getDerecho() != null) 
+	                    q.add(newnode.getDerecho()); 
+	                nodeCount--; 
+	            } 
+	        } 
 		}
 		
 	}

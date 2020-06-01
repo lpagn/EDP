@@ -12,6 +12,7 @@ public class Ejecutable {
 		arbol.ingresarNodo(new Nodo(1));
 		arbol.ingresarNodo(new Nodo(9));
 		arbol.ingresarNodo(new Nodo(20));
+		arbol.ingresarNodo(new Nodo(25));
 		arbol.ingresarNodo(new Nodo(14));
 		
 		Arbol.inorden(arbol.getRaiz());
