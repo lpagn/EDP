@@ -96,5 +96,9 @@ public class Arbol {
 	            } 
 	        } 
 		}
+
+	public boolean equals(Arbol a2) {
+		return Nodo.equal(this.raiz, a2.getRaiz());
+	}
 		
 	}

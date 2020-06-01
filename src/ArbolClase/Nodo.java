@@ -60,5 +60,14 @@ public class Nodo {
 			}
 		}
 	}
+
+	public static boolean equal(Nodo n1, Nodo n2) {
+		if (n1 == null &&  n2 == null) return true;
+		if (n1 == null || n2 == null) return false;
+
+		// A partir de aca ni n1 ni n2 es null
+		if (n1.getvalor() != n2.getvalor()) return false;
+		return equal(n1.getDerecho(), n2.getDerecho()) && equal(n1.getIzquierdo(), n2.getIzquierdo());
+	}
 	
 }
