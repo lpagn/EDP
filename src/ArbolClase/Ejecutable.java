@@ -27,9 +27,9 @@ public class Ejecutable {
 
 		Nodo raiz  = new Nodo(1);
 		Nodo derecha = new Nodo(3);
-		Nodo izquierda = new Nodo(2);
+		//Nodo izquierda = new Nodo(2);
 		raiz.setDerecho(derecha);
-		raiz.setIzquierdo(izquierda);
+		//raiz.setIzquierdo(izquierda);
 		arbol.ingresarNodo(raiz);
 		System.out.println(estaLleno(arbol));
 
